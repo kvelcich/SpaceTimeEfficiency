@@ -118,12 +118,3 @@ bool PowerStats::Intel_GetMsrFunc(int iMsr, int &funcID){
 bool PowerStats::Intel_GetPowerData(int iNode, int iMSR, double *pResult, int *nResult){
   return ::GetPowerData(iNode, iMSR, pResult, nResult) != 0;
 }
-
-int main() {
-    PowerStats *powerstats = new PowerStats();
-    powerstats->Start();
-    cout << powerstats->Measure() << endl;
-    for (int i = 0; i < 1000000; i++)
-        for (int j = 0; j < 100; j++);
-    cout << powerstats->Measure() << endl;
-}
